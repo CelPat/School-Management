@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public enum Grades {
+public enum Grades {
+    ndst, dop, dst, db, bdb, cel;
 }

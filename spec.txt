@@ -1,0 +1,30 @@
+School management project.
+
+class School:
+String name
+String address
+List<Employee> employees
+List<Student> students
+double bankBalance
+
+class Employee:
+String firstName
+String lastName
+String position
+Double salary
+
+class Student:
+String firstName
+String lastName
+int age
+int semester
+List<Subject> subjects
+
+public void addSubject
+public void removeSubject
+
+class Subject:
+List<Grades> grades
+
+enum Grades:
+ndst,dop,dst,db,bdb,cel
