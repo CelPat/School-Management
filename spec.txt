@@ -10,8 +10,9 @@ double bankBalance
 class Employee:
 String firstName
 String lastName
-String position
+int age;
 Double salary
+String position
 
 class Student:
 String firstName
