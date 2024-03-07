@@ -7,76 +7,77 @@ public class Student {
     private int semester;
     private List<Subject> subjects;
 
-    public Student(String firstName, String lastName, int age, int semester) {
+    public Student(String firstName, String lastName, int age, int semester, List<Subject> subjects) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.semester = semester;
+        this.subjects = subjects;
     }
 
-    /*
-    Return student last name.
-    @return String
+    /**
+     * @return String - student's first name
      */
     public String getFirstName() {
         return firstName;
     }
 
-    /*
-    Return student fist name.
-    @return String
+    /**
+     * @return String - student last name.
      */
     public String getLastName() {
         return lastName;
     }
 
-    /*
-    Return student current age.
-    @return int
+    /**
+     * @return int - student current age.
      */
     public int getAge() {
         return age;
     }
 
-    /*
-    Return student current semester.
-    @return int
+    /**
+     * @return int - student current semester
      */
     public int getSemester() {
         return semester;
     }
 
-    /*
-    Returns list of subjects that student is currently enrolled to.
-    @return List<Subject>
+    /**
+     * @return List<Subject> - list of subjects that student is currently enrolled to.
      */
     public List<Subject> getSubjects() {
         return subjects;
     }
 
-    /*
-    Adds the subject to student's list of subjects
-    @param subject - subject to add to the list
+    /**
+     * Adds the subject to student's list of subjects
+     * @param subject - subject to add to the list
      */
     public void addSubject(Subject subject){
         subjects.add(subject);
     }
 
-    /*
-    Remove given subject from student's list of subjects.
-    @param subjectToRemove - subject to remove from the list
-    */
+    /**
+     *  Remove given subject from student's list of subjects.
+     * @param subjectToRemove - subject to remove from the list of subjects.
+     */
     public void removeSubject(Subject subjectToRemove){
-        for (Subject subject : subjects) {
-            if (subject == subjectToRemove){
-                subjects.remove(subject);
-            }
-        }
+        subjects.removeIf(subject -> subject == subjectToRemove);
     }
 
-    /*
-    Gives back all info about the student.
-    @return String - String of students data.
+    /**
+     * Removes all subject from student list of subject.
+     * Should be used when student is starting next semester and subjects are changing.
+     * @param student - student which list of subjects should be changed
+     */
+    public void removeAllSubjects(Student student){
+        subjects.removeAll(student.subjects);
+    }
+
+    /**
+     * Gives back all info about the student.
+     * @return String - String of students data.
      */
     @Override
     public String toString() {

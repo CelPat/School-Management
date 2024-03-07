@@ -22,9 +22,11 @@ List<Subject> subjects
 
 public void addSubject
 public void removeSubject
+public void removeAllSubjects
+
 
 class Subject:
 List<Grades> grades
 
 enum Grades:
-ndst,dop,dst,db,bdb,cel
+NDST, DOP, DST, DB, BDB, CEL;

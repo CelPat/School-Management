@@ -1,3 +1,3 @@
 public enum Grades {
-    ndst, dop, dst, db, bdb, cel;
+    NDST, DOP, DST, DB, BDB, CEL;
 }
