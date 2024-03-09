@@ -1,3 +1,3 @@
-public enum Grades {
+public enum PossibleGrade {
     NDST, DOP, DST, DB, BDB, CEL;
 }

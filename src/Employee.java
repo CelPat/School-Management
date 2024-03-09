@@ -2,10 +2,10 @@ public class Employee {
     private String firstName;
     private String lastName;
     private int age;
-    private String position;
+    private Position position;
     private double salary;
 
-    public Employee(String firstName, String lastName, int age, double salary, String position) {
+    public Employee(String firstName, String lastName, int age, double salary, Position position) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -29,14 +29,21 @@ public class Employee {
         return salary;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
+
+    /**
+     * @param position - Change current position to new one provided as param.
+     */
+    public void changePosition(Position position){
+        this.position = position;
+    }
+
 
     @Override
     public String toString() {
         return getFirstName() + ' ' +
-                getFirstName() + ' ' +
                 "Age: " + getAge() + ' ' +
                 "Position: " + getPosition() + ' ' +
                 "Salary: " + getSalary();

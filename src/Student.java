@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -7,12 +8,12 @@ public class Student {
     private int semester;
     private List<Subject> subjects;
 
-    public Student(String firstName, String lastName, int age, int semester, List<Subject> subjects) {
+    public Student(String firstName, String lastName, int age, int semester) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.semester = semester;
-        this.subjects = subjects;
+        subjects = new ArrayList<>();
     }
 
     /**
@@ -82,7 +83,6 @@ public class Student {
     @Override
     public String toString() {
         return getFirstName() + ' ' +
-                getFirstName() + ' ' +
                 "Age: " + getAge() + ' ' +
                 "Semester: " + getSemester() + ' ' +
                 "Subjects: " + getSubjects();

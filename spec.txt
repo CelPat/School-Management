@@ -27,7 +27,15 @@ public void removeAllSubjects
 
 
 class Subject:
-List<Grades> grades
+List<PossibleGrade> grades
 
-enum Grades:
+enum PossibleGrade:
 NDST, DOP, DST, DB, BDB, CEL;
+
+enum Position:
+TEACHER, CARETAKER, CLEANER, DIRECTOR, VICE_PRINCIPAL, SECRETARY
+
+TO-DO:
+Remove list of grades in subject class as wtih this implementation every student would need differnt instance of subject class for the same subject which is not correct.
+
+
