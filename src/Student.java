@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Student {
@@ -7,6 +8,7 @@ public class Student {
     private int age;
     private int semester;
     private List<Subject> subjects;
+    protected List<Grade> grades;
 
     public Student(String firstName, String lastName, int age, int semester) {
         this.firstName = firstName;
@@ -14,6 +16,7 @@ public class Student {
         this.age = age;
         this.semester = semester;
         subjects = new ArrayList<>();
+        grades = new LinkedList<>();
     }
 
     /**
@@ -51,6 +54,10 @@ public class Student {
         return subjects;
     }
 
+    public List<Grade> getGrades() {
+        return grades;
+    }
+
     /**
      * Adds the subject to student's list of subjects
      * @param subject - subject to add to the list
@@ -70,10 +77,10 @@ public class Student {
     /**
      * Removes all subject from student list of subject.
      * Should be used when student is starting next semester and subjects are changing.
-     * @param student - student which list of subjects should be changed
+     *
      */
-    public void removeAllSubjects(Student student){
-        subjects.removeAll(student.subjects);
+    public void removeAllSubjects(){
+        subjects.clear();
     }
 
     /**

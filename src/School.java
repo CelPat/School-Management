@@ -49,7 +49,7 @@ public class School {
     /**
      * @param moneyIn - amount of money which will be added to school bank balance.
      */
-    public void receiveMoney(int moneyIn){
+    public void receiveMoney(double moneyIn){
         bankBalance += moneyIn;
     }
 
@@ -67,7 +67,7 @@ public class School {
     }
 
     /**
-     * @param expense - additional expense to pay for school (different than salary)
+     * @param expense - additional expense to pay for school (different from salary)
      */
     public void payAdditionalExpenses(double expense){
         bankBalance -= expense;

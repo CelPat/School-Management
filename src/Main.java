@@ -1,9 +1,11 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
         School lo1 = new School("Liceum ogólnokształtcoce nr. 1", "3 maja", 40000);
 
-        Employee Liza = new Employee("Liza", "Huberman", 24, 3800, Position.TEACHER);
+        Teacher Liza = new Teacher("Liza", "Huberman", 24, 3800);
         Employee Adam = new Employee("Adam", "Goggins", 34, 4800,Position.DIRECTOR );
         Employee Mat = new Employee("Mat", "Smith", 41, 3100, Position.CARETAKER);
         Employee Sara = new Employee("Sara", "Tate", 25, 3450, Position.SECRETARY);
@@ -31,8 +33,19 @@ public class Main {
 
         System.out.println("Students of " + lo1 + " " + lo1.getStudents());
 
+        Subject math = new Subject("math", Liza);
+        Liza.createAndAddGradeForStudent(s1, PossibleGrade.BDB, math, "Test - geometry");
+
+        System.out.println(s1.getGrades());
+
+
+
     }
 
+
+    private static void createGrade(Student student, PossibleGrade grade, Subject subject, String description){
+        Grade newGrade = new Grade(student,grade,subject, description);
+    }
     private static void addEmployeeToSchool(School school, Employee employee) {
         school.addEmployee(employee);
     }
