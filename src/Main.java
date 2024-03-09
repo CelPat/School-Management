@@ -43,9 +43,6 @@ public class Main {
     }
 
 
-    private static void createGrade(Student student, PossibleGrade grade, Subject subject, String description){
-        Grade newGrade = new Grade(student,grade,subject, description);
-    }
     private static void addEmployeeToSchool(School school, Employee employee) {
         school.addEmployee(employee);
     }
