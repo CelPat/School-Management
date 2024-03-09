@@ -26,12 +26,6 @@ public class Subject {
         return teacher;
     }
 
-
-//    public void addGrade(PossibleGrade possibleGrade){
-//        possibleGrades.add(possibleGrade);
-//    }
-
-
     @Override
     public String toString() {
         return name + '\'' + ", teacher - " + teacher;
