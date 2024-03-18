@@ -34,10 +34,13 @@ public class Main {
         System.out.println("Students of " + lo1 + " " + lo1.getStudents());
 
         Subject math = new Subject("math", Liza);
-        Liza.createAndAddGradeForStudent(s1, PossibleGrade.BDB, math, "Test - geometry");
+        Liza.createAndAddGradeForStudent(s1, PossibleGrade.DB, math, "Test - geometry");
 
         System.out.println(s1.getGrades());
 
+        Grade newGrade = new Grade(s1, PossibleGrade.BDB, math, "Retake - geometry");
+        Liza.changeGrade(s1,1, newGrade);
+        System.out.println(s1.getGrades());
 
 
     }

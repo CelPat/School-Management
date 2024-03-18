@@ -26,6 +26,7 @@ public class Subject {
         return teacher;
     }
 
+
     @Override
     public String toString() {
         return name + '\'' + ", teacher - " + teacher;

@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Teacher extends Employee{
@@ -25,12 +26,40 @@ public class Teacher extends Employee{
      */
     public boolean changeGrade(Student student, int idOfGradeToChange, Grade newGrade){
         for (Grade grade : student.grades) {
-            if(grade.getId() == idOfGradeToChange){
-                grade = newGrade;
-                return true;
+            try{
+                if(grade.getId() == idOfGradeToChange){
+                    grade = newGrade;
+                    removeGrade(student,idOfGradeToChange);
+                    addGrade(student,newGrade);
+                    System.out.println("Grade changed.");
+                    System.out.println("New grade: " + grade);
+                    return true;
+                }
+            }catch (NoSuchElementException e){
+                System.err.println("Grade not found");
             }
         }
-        System.err.println("Grade not found");
+        System.err.println();
+        return false;
+    }
+
+    public void addGrade(Student student, Grade gradeToAdd){
+        student.grades.add(gradeToAdd);
+        System.out.println("Dodadno ocene: " + gradeToAdd);
+    }
+
+    public boolean removeGrade(Student student, int idOfGradeToRemove){
+        for(Grade grade : student.grades){
+            try{
+                if(grade.getId() == idOfGradeToRemove){
+                    student.grades.remove(grade);
+                    System.out.println("Grade removed");
+                    return true;
+                }
+            }catch (NoSuchElementException e){
+                System.err.println("Grade not found");
+            }
+        }
         return false;
     }
 

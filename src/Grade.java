@@ -1,4 +1,5 @@
 import java.time.temporal.TemporalAccessor;
+import java.util.Objects;
 
 public class Grade {
     private int id;
@@ -6,7 +7,7 @@ public class Grade {
     private PossibleGrade grade;
     private Subject subject;
     private String description;
-    private int grades_count = 0;
+    private static int grades_count = 0;
     public Grade(Student student, PossibleGrade grade, Subject subject, String description) {
         grades_count++;
         this.id = grades_count;
@@ -16,6 +17,18 @@ public class Grade {
         this.description = description;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Grade grade1 = (Grade) o;
+        return id == grade1.id && Objects.equals(student, grade1.student) && grade == grade1.grade && Objects.equals(subject, grade1.subject) && Objects.equals(description, grade1.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, student, grade, subject, description);
+    }
 
     public int getId() {
         return id;
@@ -44,7 +57,7 @@ public class Grade {
         return "Grade{" +
                 "id=" + id +
                 ", grade=" + grade +
-                ", subject=" + subject +
-                ", description='" + description + '\'';
+                ", description='" + description +
+                ", subject=" + subject + '\'';
     }
 }
