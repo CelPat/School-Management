@@ -1,3 +1,5 @@
+package Entities;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -48,7 +50,7 @@ public class Student {
     }
 
     /**
-     * @return List<Subject> - list of subjects that student is currently enrolled to.
+     * @return List<Entities.Subject> - list of subjects that student is currently enrolled to.
      */
     public List<Subject> getSubjects() {
         return subjects;

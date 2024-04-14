@@ -1,4 +1,5 @@
-import java.time.temporal.TemporalAccessor;
+package Entities;
+
 import java.util.Objects;
 
 public class Grade {
@@ -54,7 +55,7 @@ public class Grade {
 
     @Override
     public String toString() {
-        return "Grade{" +
+        return "Entities.Grade{" +
                 "id=" + id +
                 ", grade=" + grade +
                 ", description='" + description +

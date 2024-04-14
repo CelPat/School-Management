@@ -1,5 +1,6 @@
+package Entities;
+
 import java.util.NoSuchElementException;
-import java.util.Scanner;
 
 public class Teacher extends Employee{
     public Teacher(String firstName, String lastName, int age, double salary) {
@@ -31,12 +32,12 @@ public class Teacher extends Employee{
                     grade = newGrade;
                     removeGrade(student,idOfGradeToChange);
                     addGrade(student,newGrade);
-                    System.out.println("Grade changed.");
+                    System.out.println("Entities.Grade changed.");
                     System.out.println("New grade: " + grade);
                     return true;
                 }
             }catch (NoSuchElementException e){
-                System.err.println("Grade not found");
+                System.err.println("Entities.Grade not found");
             }
         }
         System.err.println();
@@ -53,11 +54,11 @@ public class Teacher extends Employee{
             try{
                 if(grade.getId() == idOfGradeToRemove){
                     student.grades.remove(grade);
-                    System.out.println("Grade removed");
+                    System.out.println("Entities.Grade removed");
                     return true;
                 }
             }catch (NoSuchElementException e){
-                System.err.println("Grade not found");
+                System.err.println("Entities.Grade not found");
             }
         }
         return false;

@@ -1,37 +1,37 @@
-School management project.
+Entities.School management project.
 
-class School:
+class Entities.School:
 String name
 String address
-List<Employee> employees
-List<Student> students
+List<Entities.Employee> employees
+List<Entities.Student> students
 double bankBalance
 
-class Employee:
+class Entities.Employee:
 String firstName
 String lastName
 int age;
 Double salary
 String position
 
-class Student:
+class Entities.Student:
 String firstName
 String lastName
 int age
 int semester
-List<Subject> subjects
+List<Entities.Subject> subjects
 
 public void addSubject
 public void removeSubject
 public void removeAllSubjects
 
 
-class Subject:
-List<PossibleGrade> grades
+class Entities.Subject:
+List<Entities.PossibleGrade> grades
 
-enum PossibleGrade:
+enum Entities.PossibleGrade:
 NDST, DOP, DST, DB, BDB, CEL;
 
-enum Position:
+enum Entities.Position:
 TEACHER, CARETAKER, CLEANER, DIRECTOR, VICE_PRINCIPAL, SECRETARY
 

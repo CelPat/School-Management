@@ -1,3 +1,5 @@
+package Entities;
+
 public class Employee {
     private String firstName;
     private String lastName;
@@ -44,7 +46,7 @@ public class Employee {
     public String toString() {
         return getFirstName() + ' ' +
                 "Age: " + getAge() + ' ' +
-                "Position: " + getPosition() + ' ' +
+                "Entities.Position: " + getPosition() + ' ' +
                 "Salary: " + getSalary();
     }
 }

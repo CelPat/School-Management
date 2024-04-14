@@ -1,7 +1,66 @@
+import Entities.*;
+import View.MainFrame;
+
+import javax.swing.*;
+import java.awt.*;
+import java.text.MessageFormat;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        final int EXIT = 0;
+        final int CREATE_EMPLOYEE = 1;
+        final int CREATE_STUDENT = 2;
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+                 | UnsupportedLookAndFeelException e1) {
+            e1.printStackTrace();
+        }
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    MainFrame frame = new MainFrame();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+/*
+        System.out.println("Create school first.");
+        System.out.println("Enter name of the school:");
+        String name = input.nextLine();
+        System.out.println("Enter address of the school:");
+        String address = input.nextLine();
+        System.out.println("Enter school budget");
+        double bankBalance = input.nextDouble();
+
+        School school1 = new School(name,address,bankBalance);
+
+        do {
+            System.out.println("Options:" +
+                    "Quit - " + EXIT +
+                    "Create employee - " + CREATE_EMPLOYEE +
+                    "Create Entities.Student - " + CREATE_STUDENT);
+            int choice = input.nextInt();
+            try{
+                if(choice == CREATE_EMPLOYEE){
+                    createEmployee(input);
+                }
+            }catch (NoSuchElementException e){
+                System.err.println("Try again");
+            }
+
+
+        }while (input.nextInt() != (EXIT));
+
+
 
         School lo1 = new School("Liceum ogólnokształtcoce nr. 1", "3 maja", 40000);
 
@@ -41,16 +100,12 @@ public class Main {
         Grade newGrade = new Grade(s1, PossibleGrade.BDB, math, "Retake - geometry");
         Liza.changeGrade(s1,1, newGrade);
         System.out.println(s1.getGrades());
-
+*/
 
     }
 
 
-    private static void addEmployeeToSchool(School school, Employee employee) {
-        school.addEmployee(employee);
-    }
 
-    private static void addStudentToSchool(School school, Student student){
-        school.addStudent(student);
-    }
+
+
 }
